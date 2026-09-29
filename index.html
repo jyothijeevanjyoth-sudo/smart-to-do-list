@@ -17,45 +17,52 @@
 
     <main>
 
-        <section>
+        <section class="add-section">
+
             <h2>Add Task</h2>
 
             <form id="todoForm">
 
-                <label for="todoInput">Task</label>
+                <div class="form-group task-group">
+                    <label for="todoInput">Task</label>
+                    <input
+                        id="todoInput"
+                        type="text"
+                        placeholder="Enter your task"
+                    >
+                </div>
 
-                <input
-                    id="todoInput"
-                    type="text"
-                    placeholder="Enter a task"
-                >
+                <div class="form-group">
+                    <label for="priority">Priority</label>
+                    <select id="priority">
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
 
-                <label for="priority">Priority</label>
+                <div class="form-group">
+                    <label for="dueDate">Due Date</label>
+                    <input
+                        id="dueDate"
+                        type="date"
+                    >
+                </div>
 
-                <select id="priority">
-                    <option value="low">Low</option>
-                    <option value="medium">Medium</option>
-                    <option value="high">High</option>
-                </select>
-
-                <label for="dueDate">Due Date</label>
-
-                <input
-                    id="dueDate"
-                    type="date"
-                >
-
-                <button type="submit">Add Task</button>
+                <button type="submit" class="add-button">
+                    Add Task
+                </button>
 
             </form>
+
         </section>
 
 
-        <section>
+        <section class="tasks-section">
 
             <h2>Tasks</h2>
 
-            <div>
+            <div class="task-controls">
 
                 <input
                     type="text"
@@ -63,43 +70,36 @@
                     placeholder="Search tasks..."
                 >
 
-                <button type="button" id="allBtn">
-                    All
-                </button>
-
-                <button type="button" id="activeBtn">
-                    Active
-                </button>
-
-                <button type="button" id="completedBtn">
-                    Completed
-                </button>
+                <div class="filter-buttons">
+                    <button type="button" id="allBtn">All</button>
+                    <button type="button" id="activeBtn">Active</button>
+                    <button type="button" id="completedBtn">Completed</button>
+                </div>
 
             </div>
 
 
-            <div>
+            <div class="task-counts">
 
-                <p>
-                    Total:
-                    <span id="totalCount">0</span>
-                </p>
+                <div class="count-box">
+                    <span>Total</span>
+                    <strong id="totalCount">0</strong>
+                </div>
 
-                <p>
-                    Active:
-                    <span id="activeCount">0</span>
-                </p>
+                <div class="count-box">
+                    <span>Active</span>
+                    <strong id="activeCount">0</strong>
+                </div>
 
-                <p>
-                    Completed:
-                    <span id="completedCount">0</span>
-                </p>
+                <div class="count-box">
+                    <span>Completed</span>
+                    <strong id="completedCount">0</strong>
+                </div>
 
             </div>
 
 
-            <ul id="taskList">
-            </ul>
+            <ul id="taskList"></ul>
 
         </section>
 
